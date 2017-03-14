@@ -1,30 +1,30 @@
 {
-  "name": "d3-quadtree",
-  "version": "1.0.3",
-  "description": "Two-dimensional recursive spatial subdivision.",
+  "name": "d3-octree",
+  "version": "0.0.1",
+  "description": "Three-dimensional recursive spatial subdivision.",
   "keywords": [
     "d3",
     "d3-module",
-    "quadtree"
+    "octree",
+    "3d"
   ],
-  "homepage": "https://d3js.org/d3-quadtree/",
+  "homepage": "https://github.com/vasturiano/d3-octree",
   "license": "BSD-3-Clause",
   "author": {
-    "name": "Mike Bostock",
-    "url": "http://bost.ocks.org/mike"
+    "name": "Vasco Asturiano",
+    "url": "http://bl.ocks.org/vasturiano"
   },
-  "main": "build/d3-quadtree.js",
+  "main": "build/d3-octree.js",
   "module": "index",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/d3/d3-quadtree.git"
+    "url": "https://github.com/vasturiano/d3-octree.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-quadtree.js -- index.js",
+    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-octree.js -- index.js",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
-    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-quadtree.js -c -m -o build/d3-quadtree.min.js",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-quadtree/build/d3-quadtree.js d3-quadtree.v1.js && cp ../d3-quadtree/build/d3-quadtree.min.js d3-quadtree.v1.min.js && git add d3-quadtree.v1.js d3-quadtree.v1.min.js && git commit -m \"d3-quadtree ${npm_package_version}\" && git push && cd - && zip -j build/d3-quadtree.zip -- LICENSE README.md build/d3-quadtree.js build/d3-quadtree.min.js"
+    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-octree.js -c -m -o build/d3-octree.min.js"
   },
   "devDependencies": {
     "d3-array": "1",
