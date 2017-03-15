@@ -68,9 +68,9 @@ export default function(x, y, z, radius) {
       var dx = x - +this._x.call(null, node.data),
           dy = y - +this._y.call(null, node.data),
           dz = z - +this._z.call(null, node.data),
-          d3 = dx * dx + dy * dy + dz * dz;
-      if (d3 < radius) {
-        var d = Math.cbrt(radius = d3);
+          d2 = dx * dx + dy * dy + dz * dz;
+      if (d2 < radius) {
+        var d = Math.sqrt(radius = d2);
         x0 = x - d, y0 = y - d, z0 = z - d;
         x3 = x + d, y3 = y + d, z3 = z + d;
         data = node.data;
