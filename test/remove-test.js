@@ -101,7 +101,15 @@ tape("octree.remove(datum) removes another point in the octree", function(test) 
       ,
       ,
       ,
+      ,
+      ,
+      ,
+      ,
       [
+        ,
+        ,
+        ,
+        ,
         ,
         ,
         {data: [346, 405, 405]},
@@ -111,18 +119,34 @@ tape("octree.remove(datum) removes another point in the octree", function(test) 
     [
       ,
       ,
+      ,
+      ,
+      ,
+      ,
       [
         {data: [520, 345, 345]},
         {data: [646, 318, 318]},
+        ,
+        ,
+        ,
+        ,
         [
           ,
           {data: [630, 438, 438]},
+          ,
+          ,
+          ,
+          ,
           {data: [570, 489, 489]},
 
         ],
         {data: [715, 464, 464]}
       ],
     ],
+    ,
+    ,
+    ,
+    ,
     {data: [434, 620, 620]},
     {data: [523, 519, 519]}
   ]);
