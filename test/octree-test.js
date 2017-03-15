@@ -19,7 +19,7 @@ tape("d3.octree(nodes) is equivalent to d3.octree().addAll(nodes)", function(tes
   test.end();
 });
 
-tape("d3.octree(nodes, x, y) is equivalent to d3.octree().x(x).y(y).addAll(nodes)", function(test) {
+tape("d3.octree(nodes, x, y, z) is equivalent to d3.octree().x(x).y(y).z(z).addAll(nodes)", function(test) {
   var q = d3_octree.octree([{x: 0, y: 0, z: 0}, {x: 1, y: 1, z: 1}], function(d) { return d.x; }, function(d) { return d.y; }, function(d) { return d.z; });
   test.ok(q instanceof d3_octree.octree);
   test.deepEqual(q.root(), [{data: {x: 0, y: 0, z: 0}},,,,,,, {data: {x: 1, y: 1, z: 1}}]);
