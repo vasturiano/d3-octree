@@ -1,24 +1,24 @@
 var tape = require("tape"),
-    d3_quadtree = require("../");
+    d3_octree = require("../");
 
-tape("quadtree.y(y) sets the y-accessor used by quadtree.add", function(test) {
-  var q = d3_quadtree.quadtree().y(y).add({0: 1, y: 2});
+tape("octree.y(y) sets the y-accessor used by octree.add", function(test) {
+  var q = d3_octree.octree().y(y).add({0: 1, y: 2});
   test.deepEqual(q.extent(), [[1, 2], [2, 3]]);
   test.deepEqual(q.root(), {data: {0: 1, y: 2}});
   test.end();
 });
 
-tape("quadtree.y(y) sets the y-accessor used by quadtree.addAll", function(test) {
-  var q = d3_quadtree.quadtree().y(y).addAll([{0: 1, y: 2}]);
+tape("octree.y(y) sets the y-accessor used by octree.addAll", function(test) {
+  var q = d3_octree.octree().y(y).addAll([{0: 1, y: 2}]);
   test.deepEqual(q.extent(), [[1, 2], [2, 3]]);
   test.deepEqual(q.root(), {data: {0: 1, y: 2}});
   test.end();
 });
 
-tape("quadtree.y(y) sets the y-accessor used by quadtree.remove", function(test) {
+tape("octree.y(y) sets the y-accessor used by octree.remove", function(test) {
   var p0 = {0: 0, y: 1},
       p1 = {0: 1, y: 2},
-      q = d3_quadtree.quadtree().y(y);
+      q = d3_octree.octree().y(y);
   test.deepEqual(q.add(p0).root(), {data: {0: 0, y: 1}});
   test.deepEqual(q.add(p1).root(), [{data: {0: 0, y: 1}},,, {data: {0: 1, y: 2}}]);
   test.deepEqual(q.remove(p1).root(), {data: {0: 0, y: 1}});
