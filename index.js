@@ -1,1 +1,1 @@
-export {default as quadtree} from "./src/quadtree";
+export {default as octree} from "./src/octree";

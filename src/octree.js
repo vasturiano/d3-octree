@@ -11,18 +11,21 @@ import tree_visitAfter from "./visitAfter";
 import tree_x, {defaultX} from "./x";
 import tree_y, {defaultY} from "./y";
 
-export default function quadtree(nodes, x, y) {
-  var tree = new Quadtree(x == null ? defaultX : x, y == null ? defaultY : y, NaN, NaN, NaN, NaN);
+export default function octree(nodes, x, y, z) {
+  var tree = new Octree(x == null ? defaultX : x, y == null ? defaultY : y, z == null ? defaultZ : z, NaN, NaN, NaN, NaN, NaN, NaN);
   return nodes == null ? tree : tree.addAll(nodes);
 }
 
-function Quadtree(x, y, x0, y0, x1, y1) {
+function Octree(x, y, z, x0, y0, z0, x1, y1, z1) {
   this._x = x;
   this._y = y;
+  this._z = z;
   this._x0 = x0;
   this._y0 = y0;
+  this._z0 = z0;
   this._x1 = x1;
   this._y1 = y1;
+  this._z1 = z1;
   this._root = undefined;
 }
 
@@ -32,10 +35,10 @@ function leaf_copy(leaf) {
   return copy;
 }
 
-var treeProto = quadtree.prototype = Quadtree.prototype;
+var treeProto = octree.prototype = Octree.prototype;
 
 treeProto.copy = function() {
-  var copy = new Quadtree(this._x, this._y, this._x0, this._y0, this._x1, this._y1),
+  var copy = new Octree(this._x, this._y, this._z, this._x0, this._y0, this._z0, this._x1, this._y1, this._z1),
       node = this._root,
       nodes,
       child;
@@ -44,11 +47,11 @@ treeProto.copy = function() {
 
   if (!node.length) return copy._root = leaf_copy(node), copy;
 
-  nodes = [{source: node, target: copy._root = new Array(4)}];
+  nodes = [{source: node, target: copy._root = new Array(8)}];
   while (node = nodes.pop()) {
-    for (var i = 0; i < 4; ++i) {
+    for (var i = 0; i < 8; ++i) {
       if (child = node.source[i]) {
-        if (child.length) nodes.push({source: child, target: node.target[i] = new Array(4)});
+        if (child.length) nodes.push({source: child, target: node.target[i] = new Array(8)});
         else node.target[i] = leaf_copy(child);
       }
     }
