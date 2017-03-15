@@ -75,3 +75,4 @@ treeProto.visit = tree_visit;
 treeProto.visitAfter = tree_visitAfter;
 treeProto.x = tree_x;
 treeProto.y = tree_y;
+treeProto.z = tree_z;
