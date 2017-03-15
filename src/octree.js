@@ -10,6 +10,7 @@ import tree_visit from "./visit";
 import tree_visitAfter from "./visitAfter";
 import tree_x, {defaultX} from "./x";
 import tree_y, {defaultY} from "./y";
+import tree_z, {defaultZ} from "./z";
 
 export default function octree(nodes, x, y, z) {
   var tree = new Octree(x == null ? defaultX : x, y == null ? defaultY : y, z == null ? defaultZ : z, NaN, NaN, NaN, NaN, NaN, NaN);
