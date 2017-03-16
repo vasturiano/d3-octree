@@ -1,8 +1,8 @@
 # d3-octree
 
-Modified version of D3's [Quadtree](https://github.com/d3/d3-octree), to use with three dimensional data structures, by adding the z coordinate.
+Ported version of D3's [Quadtree](https://github.com/d3/d3-quadtree), to use with three dimensional data structures, by adding the z coordinate.
 
-A [octree](https://en.wikipedia.org/wiki/Octree) recursively partitions three-dimensional space into cubes, dividing each cube into eight equally-sized cubes. Each distinct point exists in a unique leaf [node](#nodes); coincident points are represented by a linked list. Octrees can accelerate various spatial operations, such as the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) for computing many-body forces, collision detection, and searching for nearby points.
+An [octree](https://en.wikipedia.org/wiki/Octree) recursively partitions three-dimensional space into cubes, dividing each cube into eight equally-sized cubes. Each distinct point exists in a unique leaf [node](#nodes); coincident points are represented by a linked list. Octrees can accelerate various spatial operations, such as the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) for computing many-body forces, collision detection, and searching for nearby points.
 
 ## Installing
 
@@ -155,7 +155,7 @@ Visits each [node](#nodes) in the octree in post-order traversal, invoking the s
 
 ### Nodes
 
-Internal nodes of the octree are represented as four-element arrays in left-to-right, top-to-bottom, front-to-back order:
+Internal nodes of the octree are represented as eight-element arrays in left-to-right, top-to-bottom, front-to-back order:
 
 * `0` - the top-left-front octant, if any.
 * `1` - the top-right-front octant, if any.
