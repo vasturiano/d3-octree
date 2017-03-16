@@ -24,7 +24,7 @@ export default function(x, y, z, radius) {
   else {
     x0 = x - radius, y0 = y - radius, z0 = z - radius;
     x3 = x + radius, y3 = y + radius, z3 = z + radius;
-    radius *= (radius * radius);
+    radius *= radius;
   }
 
   while (q = octs.pop()) {
