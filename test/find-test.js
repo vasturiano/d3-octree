@@ -7,10 +7,11 @@ tape("octree.find(x, y, z) returns the closest point to the given [x, y, z]", fu
       dy = 17,
       dz = 17,
       q = d3_octree.octree();
-  d3_array.range(dx * dy * dz).forEach(function(i) { q.add([i % dx, i / dx | 0]); });
+  d3_array.range(dx * dy * dz).forEach(function(i) { q.add([i % dx, (i / dx) % dx | 0,  (i / dx / dx) % dx | 0]); });
   test.deepEqual(q.find( 0.1,  0.1,  0.1), [ 0,  0,  0]);
   test.deepEqual(q.find( 7.1,  7.1,  7.1), [ 7,  7,  7]);
   test.deepEqual(q.find( 0.1, 15.9,  7.1), [ 0, 16,  7]);
+  test.deepEqual(q.find( 0.1, 7.1,  15.9), [ 0, 7,  16]);
   test.deepEqual(q.find(15.9, 15.9, 15.9), [16, 16, 16]);
   test.end();
 });
