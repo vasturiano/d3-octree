@@ -4,6 +4,8 @@ Ported version of D3's [Quadtree](https://github.com/d3/d3-quadtree), to use wit
 
 An [octree](https://en.wikipedia.org/wiki/Octree) recursively partitions three-dimensional space into cubes, dividing each cube into eight equally-sized cubes. Each distinct point exists in a unique leaf [node](#nodes); coincident points are represented by a linked list. Octrees can accelerate various spatial operations, such as the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) for computing many-body forces, collision detection, and searching for nearby points.
 
+See also [d3-binarytree](https://github.com/vasturiano/d3-binarytree) and [d3-quadtree](https://github.com/d3/d3-quadtree).
+
 ## Installing
 
 If you use NPM, `npm install d3-octree`. Otherwise, download the [latest release](https://github.com/vasturiano/d3-octree/releases/latest). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
