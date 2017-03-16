@@ -46,13 +46,13 @@ tape("octree.add(datum) handles points being to the bottom of the octree bounds"
   test.end();
 });
 
-tape("octree.add(datum) handles points being to the surface of the octree bounds", function(test) {
+tape("octree.add(datum) handles points being to the front of the octree bounds", function(test) {
   var results = [], q = d3_octree.octree().extent([[0, 0, 0], [2, 2, 2]]);
   test.deepEqual(q.add([1, 1, -1]).extent(), [[0, 0, -2], [4, 4, 2]]);
   test.end();
 });
 
-tape("octree.add(datum) handles points being to the depth of the octree bounds", function(test) {
+tape("octree.add(datum) handles points being to the back of the octree bounds", function(test) {
   var results = [], q = d3_octree.octree().extent([[0, 0, 0], [2, 2, 2]]);
   test.deepEqual(q.add([1, 1, 3]).extent(), [[0, 0, 0], [4, 4, 4]]);
   test.end();
