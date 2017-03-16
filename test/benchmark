@@ -8,20 +8,20 @@ var n = 1000000,
     points2 = new Array(n);
 
 for (var j = 0; j < n; ++j) {
-  points1[j] = [Math.random() * 99, Math.random() * 99];
+  points1[j] = [Math.random() * 99, Math.random() * 99, Math.random() * 99];
 }
 
 for (var j = 0; j < n; ++j) {
-  points2[j] = [points1[j][0] + Math.random(), points1[j][1] + Math.random()];
+  points2[j] = [points1[j][0] + Math.random(), points1[j][1] + Math.random(), points1[j][2] + Math.random()];
 }
 
 var start = now();
-var root = d3_octree.octree().extent([[0, 0], [100, 100]]).addAll(points1);
+var root = d3_octree.octree().extent([[0, 0, 0], [100, 100, 100]]).addAll(points1);
 var end = now();
 console.log("create", Math.round(end - start));
 
 var start = now();
-root.visit(function(node, x0, y0, x1, y1) {});
+root.visit(function(node, x0, y0, z0, x1, y1, z1) {});
 var end = now();
 console.log("iterate", Math.round(end - start));
 
