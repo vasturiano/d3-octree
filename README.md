@@ -1,5 +1,7 @@
 # d3-octree
 
+[![NPM](https://nodei.co/npm/d3-octree.png?compact=true)](https://nodei.co/npm/d3-octree/)
+
 Ported version of D3's [Quadtree](https://github.com/d3/d3-quadtree), to use with three dimensional data structures, by adding the z coordinate.
 
 An [octree](https://en.wikipedia.org/wiki/Octree) recursively partitions three-dimensional space into cubes, dividing each cube into eight equally-sized cubes. Each distinct point exists in a unique leaf [node](#nodes); coincident points are represented by a linked list. Octrees can accelerate various spatial operations, such as the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) for computing many-body forces, collision detection, and searching for nearby points.
