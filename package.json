@@ -9,7 +9,7 @@
     "3d"
   ],
   "homepage": "https://github.com/vasturiano/d3-octree",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "author": {
     "name": "Vasco Asturiano",
     "url": "http://bl.ocks.org/vasturiano"
