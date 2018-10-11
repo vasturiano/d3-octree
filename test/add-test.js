@@ -23,7 +23,7 @@ tape("octree.add(datum) handles points being on the perimeter of the octree boun
 });
 
 tape("octree.add(datum) handles points being to the left of the octree bounds", function(test) {
-  var results = [], q = d3_octree.octree().extent([[0, 0, 0], [2, 2, 2]]);
+  var q = d3_octree.octree().extent([[0, 0, 0], [2, 2, 2]]);
   test.deepEqual(q.add([-1, 1, 1]).extent(), [[-2, 0, 0], [2, 4, 4]]);
   test.end();
 });

@@ -4,7 +4,7 @@ var tape = require("tape"),
 tape("d3.octree() creates an empty octree", function(test) {
   var q = d3_octree.octree();
   test.ok(q instanceof d3_octree.octree);
-  test.equal(q.visit(function(node, x0, y0, z0, x1, y1, z1) { throw new Error; }), q);
+  test.equal(q.visit(function() { throw new Error; }), q);
   test.equal(q.size(), 0);
   test.equal(q.extent(), undefined);
   test.equal(q.root(), undefined);
