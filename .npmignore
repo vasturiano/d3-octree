@@ -1,4 +1,2 @@
-*.sublime-*
 dist/*.zip
-img/
 test/
