@@ -28,10 +28,10 @@
     "prepublishOnly": "rm -rf dist && yarn test"
   },
   "devDependencies": {
-    "d3-array": "1",
-    "eslint": "5",
-    "rollup": "0.64",
-    "rollup-plugin-terser": "1",
+    "d3-array": "2",
+    "eslint": "6",
+    "rollup": "1.24",
+    "rollup-plugin-terser": "5",
     "tape": "4"
   }
 }
