@@ -122,7 +122,7 @@ Removes the specified *datum* to the octree, deriving its coordinates ⟨*x*,*y*
 <a name="octree_removeAll" href="#octree_removeAll">#</a> <i>octree</i>.<b>removeAll</b>(<i>data</i>)
  [<>](https://github.com/vasturiano/d3-octree/blob/master/src/remove.js#L65 "Source")
 
-…
+Removes the specified *data* from the octree, deriving their coordinates ⟨*x*,*y*,*z*⟩ using the current [*x*-](#octree_x), [*y*-](#octree_y) and [*z*-](#octree_z)accessors, and returns the octree. If a specified *datum* does not exist in this octree, it is ignored.
 
 <a name="octree_copy" href="#octree_copy">#</a> <i>octree</i>.<b>copy</b>()
 
