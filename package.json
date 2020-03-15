@@ -28,7 +28,8 @@
     "prepare": "rm -rf dist && yarn test"
   },
   "files": [
-    "dist/**/*"
+    "src/**/*.js",
+    "dist/**/*.js"
   ],
   "devDependencies": {
     "d3-array": "^2.4.0",
