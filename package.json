@@ -25,12 +25,15 @@
   "scripts": {
     "pretest": "rollup -c",
     "test": "tape 'test/**/*-test.js' && eslint src test",
-    "prepublishOnly": "rm -rf dist && yarn test"
+    "prepare": "rm -rf dist && yarn test"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "d3-array": "2",
     "eslint": "6",
-    "rollup": "1.24",
+    "rollup": "2",
     "rollup-plugin-terser": "5",
     "tape": "4"
   }
