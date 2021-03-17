@@ -155,6 +155,26 @@ Visits each [node](#nodes) in the octree in pre-order traversal, invoking the sp
 
 If the *callback* returns true for a given node, then the children of that node are not visited; otherwise, all child nodes are visited. This can be used to quickly visit only parts of the tree, for example when using the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation). Note, however, that child octants are always visited in sibling order: top-left-front, top-right-front, bottom-left-front, bottom-right-front, top-left-back, top-right-back, bottom-left-back, bottom-right-back. In cases such as [search](#octree_find), visiting siblings in a specific order may be faster.
 
+As an example, the following visits the octree and returns all the nodes within a cubic extent [xmin, ymin, zmin, xmax, ymax, zmax], ignoring octants that cannot possibly contain any such node:
+
+```js
+function search(octree, xmin, ymin, zmin, xmax, ymax, zmax) {
+  const results = [];
+  octree.visit(function(node, x1, y1, z1, x2, y2, z2) {
+    if (!node.length) {
+      do {
+        var d = node.data;
+        if (d[0] >= xmin && d[0] < xmax && d[1] >= ymin && d[1] < ymax && d[2] >= zmin && d[2] < zmax) {
+          results.push(d);
+        }
+      } while (node = node.next);
+    }
+    return x1 >= xmax || y1 >= ymax || z1 >= zmax || x2 < xmin || y2 < ymin || z2 < zmin;
+  });
+  return results;
+}
+```
+
 <a name="octree_visitAfter" href="#octree_visitAfter">#</a> <i>octree</i>.<b>visitAfter</b>(<i>callback</i>)
  [<>](https://github.com/vasturiano/d3-octree/blob/master/src/visitAfter.js "Source")
 

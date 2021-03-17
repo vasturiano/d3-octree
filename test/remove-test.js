@@ -49,7 +49,7 @@ tape("octree.remove(datum) removes a non-root point in the octree", function(tes
       p1 = [1, 1, 1],
       q = d3_octree.octree().addAll([p0, p1]);
   test.equal(q.remove(p0), q);
-  test.deepEqual(q.extent(), [[0, 0, 0], [1, 1, 1]]);
+  test.deepEqual(q.extent(), [[0, 0, 0], [2, 2, 2]]);
   test.equal(q.root().data, p1);
   test.deepEqual(p0, [0, 0, 0]);
   test.deepEqual(p1, [1, 1, 1]);
@@ -61,7 +61,7 @@ tape("octree.remove(datum) removes another non-root point in the octree", functi
       p1 = [1, 1, 1],
       q = d3_octree.octree().addAll([p0, p1]);
   test.equal(q.remove(p1), q);
-  test.deepEqual(q.extent(), [[0, 0, 0], [1, 1, 1]]);
+  test.deepEqual(q.extent(), [[0, 0, 0], [2, 2, 2]]);
   test.equal(q.root().data, p0);
   test.deepEqual(p0, [0, 0, 0]);
   test.deepEqual(p1, [1, 1, 1]);
