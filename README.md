@@ -3,7 +3,7 @@ d3-octree
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 Ported version of D3's [Quadtree](https://github.com/d3/d3-quadtree), to use with three dimensional data structures, by adding the z coordinate.
 
@@ -19,7 +19,7 @@ If you use NPM, `npm install d3-octree`. You can also load directly from the glo
 <script src="https://unpkg.com/d3-octree"></script>
 <script>
 
-var octree = d3.octree();
+const octree = d3.octree();
 
 </script>
 ```
@@ -34,14 +34,14 @@ var octree = d3.octree();
 Creates a new, empty octree with an empty [extent](#octree_extent) and the default [*x*-](#octree_x), [*y*-](#octree_y) and [*z*-](#octree_z)accessors. If *data* is specified, [adds](#octree_addAll) the specified array of data to the octree. This is equivalent to:
 
 ```js
-var tree = d3.octree()
+const tree = d3.octree()
     .addAll(data);
 ```
 
 If *x*, *y* and *z* are also specified, sets the [*x*-](#octree_x), [*y*-](#octree_y) and [*z*-](#octree_z) accessors to the specified functions before adding the specified array of data to the octree, equivalent to:
 
 ```js
-var tree = d3.octree()
+const tree = d3.octree()
     .x(x)
     .y(y)
     .z(z)
@@ -107,7 +107,7 @@ Adds the specified *datum* to the octree, deriving its coordinates ⟨*x*,*y*,*z
 Adds the specified array of *data* to the octree, deriving each element’s coordinates ⟨*x*,*y*,*z*⟩ using the current [*x*-](#octree_x), [*y*-](#octree_y) and [*z*-](#octree_z)accessors, and return this octree. This is approximately equivalent to calling [*octree*.add](#octree_add) repeatedly:
 
 ```js
-for (var i = 0, n = data.length; i < n; ++i) {
+for (let i = 0, n = data.length; i < n; ++i) {
   octree.add(data[i]);
 }
 ```
@@ -163,7 +163,7 @@ function search(octree, xmin, ymin, zmin, xmax, ymax, zmax) {
   octree.visit(function(node, x1, y1, z1, x2, y2, z2) {
     if (!node.length) {
       do {
-        var d = node.data;
+        const d = node.data;
         if (d[0] >= xmin && d[0] < xmax && d[1] >= ymin && d[1] < ymax && d[2] >= zmin && d[2] < zmax) {
           results.push(d);
         }
@@ -209,9 +209,9 @@ if (!node.length) do console.log(node.data); while (node = node.next);
 The point’s *x*-, *y*- and *z*-coordinates **must not be modified** while the point is in the octree. To update a point’s position, [remove](#octree_remove) the point and then re-[add](#octree_add) it to the octree at the new position. Alternatively, you may discard the existing octree entirely and create a new one from scratch; this may be more efficient if many of the points have moved.
 
 
-[npm-img]: https://img.shields.io/npm/v/d3-octree.svg
+[npm-img]: https://img.shields.io/npm/v/d3-octree
 [npm-url]: https://npmjs.org/package/d3-octree
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-octree.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-octree
 [build-size-url]: https://bundlephobia.com/result?p=d3-octree
-[dependencies-img]: https://img.shields.io/david/vasturiano/d3-octree.svg
-[dependencies-url]: https://david-dm.org/vasturiano/d3-octree
+[npm-downloads-img]: https://img.shields.io/npm/dt/d3-octree
+[npm-downloads-url]: https://www.npmtrends.com/d3-octree
