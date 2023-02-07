@@ -1,4 +1,4 @@
-import Octant from "./octant";
+import Octant from "./octant.js";
 
 export default function(x, y, z, radius) {
   var data,

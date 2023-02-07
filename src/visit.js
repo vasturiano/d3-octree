@@ -1,4 +1,4 @@
-import Octant from "./octant";
+import Octant from "./octant.js";
 
 export default function(callback) {
   var octs = [], q, node = this._root, child, x0, y0, z0, x1, y1, z1;

@@ -13,7 +13,7 @@ See also [d3-binarytree](https://github.com/vasturiano/d3-binarytree) and [d3-qu
 
 ## Installing
 
-If you use NPM, `npm install d3-octree`. You can also load directly from the global [npmJS](https://npmjs.com) registry, as a bundled [standalone library](https://unpkg.com/d3-octree). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use npm, `npm install d3-octree`. You can also load directly from the global [npmJS](https://npmjs.com) registry, as a bundled [standalone library](https://unpkg.com/d3-octree). In vanilla, a `d3` global is exported:
 
 ```html
 <script src="https://unpkg.com/d3-octree"></script>
@@ -23,8 +23,6 @@ const octree = d3.octree();
 
 </script>
 ```
-
-[Try d3-octree in your browser.](https://tonicdev.com/npm/d3-octree)
 
 ## API Reference
 

@@ -1,17 +1,15 @@
-var tape = require("tape"),
-    d3_octree = require("../");
+import assert from "assert";
+import {octree} from "../src/index.js";
 
-tape("octree.size() returns the number of points in the octree", function(test) {
-  var q = d3_octree.octree();
-  test.equal(q.size(), 0);
+it("octree.size() returns the number of points in the octree", () => {
+  const q = octree();
+  assert.strictEqual(q.size(), 0);
   q.add([0, 0, 0]).add([1, 2, 3]);
-  test.equal(q.size(), 2);
-  test.end();
+  assert.strictEqual(q.size(), 2);
 });
 
-tape("octree.size() correctly counts coincident nodes", function(test) {
-  var q = d3_octree.octree();
+it("octree.size() correctly counts coincident nodes", () => {
+  const q = octree();
   q.add([0, 0, 0]).add([0, 0, 0]);
-  test.equal(q.size(), 2);
-  test.end();
+  assert.strictEqual(q.size(), 2);
 });

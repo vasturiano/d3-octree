@@ -1,5 +1,5 @@
 export default function(d) {
-  var x = +this._x.call(null, d),
+  const x = +this._x.call(null, d),
       y = +this._y.call(null, d),
       z = +this._z.call(null, d);
   return add(this.cover(x, y, z), x, y, z, d);
@@ -57,14 +57,12 @@ function add(tree, x, y, z, d) {
 }
 
 export function addAll(data) {
-  var d, i, n = data.length,
-      x,
-      y,
-      z,
-      xz = new Array(n),
-      yz = new Array(n),
-      zz = new Array(n),
-      x0 = Infinity,
+  if (!Array.isArray(data)) data = Array.from(data);
+  const n = data.length;
+  const xz = new Float64Array(n);
+  const yz = new Float64Array(n);
+  const zz = new Float64Array(n);
+  let x0 = Infinity,
       y0 = Infinity,
       z0 = Infinity,
       x1 = -Infinity,
@@ -72,7 +70,7 @@ export function addAll(data) {
       z1 = -Infinity;
 
   // Compute the points and their extent.
-  for (i = 0; i < n; ++i) {
+  for (let i = 0, d, x, y, z; i < n; ++i) {
     if (isNaN(x = +this._x.call(null, d = data[i])) || isNaN(y = +this._y.call(null, d)) || isNaN(z = +this._z.call(null, d))) continue;
     xz[i] = x;
     yz[i] = y;
@@ -92,7 +90,7 @@ export function addAll(data) {
   this.cover(x0, y0, z0).cover(x1, y1, z1);
 
   // Add the new points.
-  for (i = 0; i < n; ++i) {
+  for (let i = 0; i < n; ++i) {
     add(this, xz[i], yz[i], zz[i], data[i]);
   }
 

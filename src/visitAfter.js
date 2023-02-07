@@ -1,4 +1,4 @@
-import Octant from "./octant";
+import Octant from "./octant.js";
 
 export default function(callback) {
   var octs = [], next = [], q;

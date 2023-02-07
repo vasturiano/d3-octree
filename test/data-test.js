@@ -1,17 +1,15 @@
-var tape = require("tape"),
-    d3_octree = require("../");
+import assert from "assert";
+import {octree} from "../src/index.js";
 
-tape("octree.data() returns an array of data in the octree", function(test) {
-  var q = d3_octree.octree();
-  test.deepEqual(q.data(), []);
+it("octree.data() returns an array of data in the octree", () => {
+  const q = octree();
+  assert.deepStrictEqual(q.data(), []);
   q.add([0, 0, 0]).add([1, 2, 3]);
-  test.deepEqual(q.data(), [[0, 0, 0], [1, 2, 3]]);
-  test.end();
+  assert.deepStrictEqual(q.data(), [[0, 0, 0], [1, 2, 3]]);
 });
 
-tape("octree.data() correctly handles coincident nodes", function(test) {
-  var q = d3_octree.octree();
+it("octree.data() correctly handles coincident nodes", () => {
+  const q = octree();
   q.add([0, 0, 0]).add([0, 0, 0]);
-  test.deepEqual(q.data(), [[0, 0, 0], [0, 0, 0]]);
-  test.end();
+  assert.deepStrictEqual(q.data(), [[0, 0, 0], [0, 0, 0]]);
 });

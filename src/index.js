@@ -1,1 +1,1 @@
-export {default as octree} from "./octree";
+export {default as octree} from "./octree.js";

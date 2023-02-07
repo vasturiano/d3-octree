@@ -1,5 +1,5 @@
-import {terser} from "rollup-plugin-terser";
-import * as meta from "./package.json";
+import terser from "@rollup/plugin-terser";
+import meta from './package.json' assert { type: 'json' };
 
 const config = {
   input: "src/index.js",
@@ -10,7 +10,7 @@ const config = {
     format: "umd",
     indent: false,
     extend: true,
-    banner: `// ${meta.homepage} v${meta.version} Copyright ${(new Date).getFullYear()} ${meta.author.name}`,
+    banner: `// ${meta.homepage} v${meta.version}`,
     globals: Object.assign({}, ...Object.keys(meta.dependencies || {}).filter(key => /^d3-/.test(key)).map(key => ({[key]: "d3"})))
   },
   plugins: []
