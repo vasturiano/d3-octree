@@ -12,7 +12,7 @@
   "license": "MIT",
   "author": {
     "name": "Vasco Asturiano",
-    "url": "http://bl.ocks.org/vasturiano"
+    "url": "https://github.com/vasturiano"
   },
   "type": "module",
   "unpkg": "dist/d3-octree.min.js",
