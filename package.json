@@ -38,8 +38,8 @@
   ],
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.0",
-    "eslint": "7",
-    "mocha": "8",
-    "rollup": "3"
+    "eslint": "^8.33.0",
+    "mocha": "^10.2.0",
+    "rollup": "^3.14.0"
   }
 }
