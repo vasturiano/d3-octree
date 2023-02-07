@@ -1,6 +1,6 @@
 {
   "name": "d3-octree",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Three-dimensional recursive spatial subdivision.",
   "keywords": [
     "d3",
