@@ -146,6 +146,11 @@ Returns the total number of data in the octree.
 
 Returns the datum closest to the position ⟨*x*,*y*,*z*⟩ with the given search *radius*. If *radius* is not specified, it defaults to infinity. If there is no datum within the search area, returns undefined.
 
+<a name="octree_findAllWithinRadius" href="#octree_findAllWithinRadius">#</a> <i>octree</i>.<b>findAllWithinRadius</b>(<i>x</i>, <i>y</i>, <i>z</i>, <i>radius</i>)
+ [<>](https://github.com/vasturiano/d3-octree/blob/master/src/findAll.js "Source")
+
+Returns all the data points within the given search *radius* of the position ⟨*x*,*y*,*z*⟩. If there is no data points within the search area, returns an empty array.
+
 <a name="octree_visit" href="#octree_visit">#</a> <i>octree</i>.<b>visit</b>(<i>callback</i>)
  [<>](https://github.com/vasturiano/d3-octree/blob/master/src/visit.js "Source")
 
